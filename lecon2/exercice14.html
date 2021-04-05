@@ -16,19 +16,20 @@
         #imageExemple img {height:200px;}
         main{position:relative; height:100%; width:98%;
             margin: 200px auto 70px auto; /*obligatoire pour décaler la box et non le texte en haut et en bas.*/
-            text-align:center; background-color:gold;}
+            text-align:center;}
         footer{position:absolute; bottom:0; height:50px; left:10px; right:10px;
             background-color:springgreen;text-align:center; padding-top:20px;}
-
-        #menu{position:absolute; height:100%; width:100px;}
-        #menu #haut{height:50%; display:table; background-color:limegreen; width:100%;}
-        #menu #haut p{display:table-cell; vertical-align:middle;}
-        #menu #bas{height:50%; display:table; background-color:mediumorchid; width:100%;}
-        #menu #bas p{display:table-cell; vertical-align:middle;}
         
-        #contenu{padding-left:110px; max-height:100%;}
-        #contenu #blocNews{float:right; height:150px; width:150px; background-color:red; display:table;}
-        #contenu #blocNews p{display:table-cell; vertical-align:middle;}
+        #partieHaute{padding:10px 20px 10px 20px; text-align:left; background-color: gainsboro;}
+        #partieHauteCadreBas{/*height:90px;*/ margin :-15px 0px 0px 0px; background-color: silver; padding:0px 0px 0px -10px;}
+        #partieHauteCadreBas ul{padding:0px 0px 0px 20px;}
+        #partieHauteCadreBas li{display:inline}
+        #partieHauteCadreBas li p {display:inline-block; width:auto; background:darkgrey; text-align:center; text-decoration:none; padding:20px 15px 20px 15px; margin:20px 0px 20px 1px}
+        #partieMilieu{text-align:left;}
+        #partieMilieuColonne1{float:left; width:30%; margin:20px 10px 15px 20px;}
+        #partieMilieuColonne2{float:left; width:30%; margin:20px 10px 15px 10px;}
+        #partieMilieuColonne3{float:left; width:30%; margin:20px 10px 15px 10px;}
+        #partieBasse{clear:both; padding:10px 20px 10px 20px; text-align:center; background-color: gainsboro;}
     </style>
 
 </head>
@@ -37,28 +38,16 @@
     <header>
         <div id='titre'>
             <h1>Leçon n°2</h1>
-            <h2>Exercice 11</h2>
+            <h2>Exercice 14</h2>
             <a href='../lecon2.html'><b>Retour</b></a><br><br>
             <b>Bandeau</b>
         </div>
         <div id='imageExemple'>
-            <img src="images/lecon2_exercice11.jpg">
+            <img src="images/lecon2_exercice14.jpg">
         </div>
     </header>
     <main>
-        <div id='menu'>
-            <div id='haut'>
-                <p><b>Menu haut</b></p>
-            </div>
-            <div id='bas'>
-                <p><b>Menu bas</b></p>
-            </div>
-        </div>
-        <div id='contenu'> 
-            <div id='blocNews'>
-                <p><b>Bloc News</b></p>
-            </div>
-            <h3>Contenu</h3>
+        <div id='partieHaute'> 
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Quo voluptates iure porro doloribus ullam veniam eos, 
@@ -75,7 +64,41 @@
                 corrupti ad nesciunt harum quidem inventore, ratione error et 
                 nulla repellendus, rem quaerat. Asperiores, aspernatur. Autem 
                 excepturi impedit nihil explicabo dolorum? Dicta, minima nihil 
-                et velit consectetur quidem at beatae corporis. Quod, iure?
+            </p>
+            <div id='partieHauteCadreBas'>
+                <ul>
+                    <li><p>Lorem ipsum</p></li>
+                    <li><p>veniam</p></li>
+                    <li><p>minima</p></li>
+                    <li><p>expedita</p></li>
+                    <li><p>dignissimos</p></li>
+                </ul>
+            </div>  
+        </div>
+        <div id='partieMilieu'>
+            <div id='partieMilieuColonne1'>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quo voluptates iure porro doloribus ullam veniam eos, 
+                deserunt pariatur numquam? Porro molestias dolore minima 
+                ad sequi quod quis quaerat voluptatem quam? Saepe, porro! 
+            </div>
+            <div id='partieMilieuColonne2'>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quo voluptates iure porro doloribus ullam veniam eos, 
+                deserunt pariatur numquam? Porro molestias dolore minima 
+                ad sequi quod quis quaerat voluptatem quam? Saepe, porro! 
+                Facilis dolorem eaque omnis quos, harum perspiciatis et consequatur, 
+                amet delectus reprehenderit deserunt, odio cum autem fugit dolores 
+            </div>
+            <div id='partieMilieuColonne3'>
+                nobis earum cumque at. Quia dignissimos ut aliquid repellat 
+                dolor debitis nemo est exercitationem expedita modi ducimus 
+                corrupti ad nesciunt harum quidem inventore, ratione error et 
+                nulla repellendus, rem quaerat. Asperiores, aspernatur. Autem 
+            </div>
+        </div>
+        <div id='partieBasse'>
+            <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Quo voluptates iure porro doloribus ullam veniam eos, 
                 deserunt pariatur numquam? Porro molestias dolore minima 
@@ -86,28 +109,6 @@
                 dolor debitis nemo est exercitationem expedita modi ducimus 
                 corrupti ad nesciunt harum quidem inventore, ratione error et 
                 nulla repellendus, rem quaerat. Asperiores, aspernatur. Autem 
-                excepturi impedit nihil explicabo dolorum? Dicta, minima nihil 
-                et velit consectetur quidem at beatae corporis. Quod, iure?
-                corrupti ad nesciunt harum quidem inventore, ratione error et 
-                nulla repellendus, rem quaerat. Asperiores, aspernatur. Autem 
-                excepturi impedit nihil explicabo dolorum? Dicta, minima nihil 
-                et velit consectetur quidem at beatae corporis. Quod, iure?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quo voluptates iure porro doloribus ullam veniam eos, 
-                deserunt pariatur numquam? Porro molestias dolore minima 
-                ad sequi quod quis quaerat voluptatem quam? Saepe, porro! 
-                Facilis dolorem eaque omnis quos, harum perspiciatis et consequatur, 
-                amet delectus reprehenderit deserunt, odio cum autem fugit dolores 
-                nobis earum cumque at. Quia dignissimos ut aliquid repellat 
-                dolor debitis nemo est exercitationem expedita modi ducimus 
-                corrupti ad nesciunt harum quidem inventore, ratione error et 
-                nulla repellendus, rem quaerat. Asperiores, aspernatur. Autem 
-                excepturi impedit nihil explicabo dolorum? Dicta, minima nihil 
-                et velit consectetur quidem at beatae corporis. Quod, iure?
-                corrupti ad nesciunt harum quidem inventore, ratione error et 
-                nulla repellendus, rem quaerat. Asperiores, aspernatur. Autem 
-                excepturi impedit nihil explicabo dolorum? Dicta, minima nihil 
-                et velit consectetur quidem at beatae corporis. Quod, iure?
             </p>
         </div>
     </main>
