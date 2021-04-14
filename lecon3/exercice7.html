@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leçon 3 exercices</title>
+    <meta name="description" content="Exercices leçon 3">
+    <meta name="author" content="Patrice DE GABBIA">
+    <style type="text/css">
+        #conteneur {position:absolute; top:10px; left:10px; 
+        display:grid; grid-template-columns:[col-1]150px [col-2]60px [col-3]130px [col-4]300px [col-5]150px [end]; 
+        grid-template-rows:[row-1]80px [row-2]80px [row-3]80px [row-4]80px [end];
+        column-gap:2px; row-gap:2px;}
+
+        .el01 {grid-area: row-1 / col-1; background:crimson;}
+        .el02 {grid-area: row-2 / col-1; background:darkgreen;}
+        .el03 {grid-area: row-3 / col-1; background:darkolivegreen;}
+        .el04 {grid-area: row-4 / col-1 / row-4 / col-4; background:darkslateblue;}
+        .el05 {grid-area: row-1 / col-2 / row-3 / col-4; background:deeppink;}
+        .el06 {grid-area: row-3 / col-2; background:darkgreen;}
+        .el07 {grid-area: row-3 / col-3; background:darkturquoise;}
+        .el08 {grid-area: row-1 / col-4 / end / col-5; background:salmon;}
+        .el09 {grid-area: row-1 / col-5; background:goldenrod;}
+        .el10 {grid-area: row-2 / col-5; background:mediumslateblue;}
+        .el11 {grid-area: row-3 / col-5; background:darkcyan;}
+        .el12 {grid-area: row-4 / col-5; background:red;}
+    </style>
+</head>
+<body>
+    <div id='conteneur'>  
+        <div class='el01'></div>
+        <div class='el02'></div>
+        <div class='el03'></div>
+        <div class='el04'></div>
+        <div class='el05'></div>
+        <div class='el06'></div>
+        <div class='el07'></div>
+        <div class='el08'></div>
+        <div class='el09'></div>
+        <div class='el10'></div>
+        <div class='el11'></div>
+        <div class='el12'></div>           
+    </div>
+    
+    <div style="position:absolute; top:600px;">
+        <p>
+            <hr>
+            <a href="../lecon3.html">Retour</a>
+        </p>
+    </div>
+</body>
+</html>
