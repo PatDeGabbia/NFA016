@@ -82,7 +82,8 @@
         z-index: 999; /* mettre au premier plan */ position: absolute; /* pour gérer simplement les messages sur plusieurs lignes */}
         .form_aide::before { content: "\25C0"; /* triangle plein gauche au format unicode échappé */ color:#d45252;
         position: absolute; top:1px; left:-6px;}
-        .contact_form input:focus + .form_aide {display:none;}/* Ligne corrigée, celle du cours ne fonctionne pas */
+        .contact_form input + .form_aide {display:none;}/* Ligne corrigée, celle du cours ne fonctionne pas */
+        .contact_form input:focus + .form_aide {display:initial;} /* Rajout, n'est pas dans le cours */
         .contact_form input:required:valid + .form_aide {background: #28921f;}
         .contact_form input:required:valid + .form_aide::before {color:#28921f;}
     </style>

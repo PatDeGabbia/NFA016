@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Leçon 3 exercices</title>
+        <meta name="description" content="Exercices leçon 4">
+        <meta name="author" content="Patrice DE GABBIA">
+        <style type="text/css">
+            ul {list-style-type:none;}
+        </style>
+    </head>
+    <body>
+        <form action='http://www.action-creation.fr/cnam/HTML_CSS/chapitre4/validateForm.php' method='post'>
+            <ul>
+                <li>
+                    <label for="champ1">Valeur 1: </label>
+                    <input type="text" name="saisie_1" id="champ1">
+                </li>
+                <li>
+                    <label for="champ2">Opérateur: </label>
+                    <select name="liste" id="champ2">
+                        <option value="0">-choisir-</option>
+                        <option value="1">Toto</option>
+                        <option value="2">Tata</option>
+                        <option value="3">Titi</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="champ3">Valeur 2: </label>
+                    <input type="text" name="saisie_2" id="champ3">
+                </li>
+                <li>
+                    <button type="submit">Envoyer</button>
+                </li>
+            </ul>
+        </form>
+
+        <section style="position:absolute; top:200px; left:50px; width:400px;">
+            <p>
+                envoi des données en mode "post".
+            </p>
+            <p>
+                Lorsque l'on rempli les champs puis que l'on appuie 
+                sur envoyé, on est redirigé vers la page "action-creation.fr".
+            </p>
+            <p>
+                Les valeurs envoyées n'apparaissent plus dans l'URL de cette page.
+                si on essaye de rafraîchir la page, un avertissement apparaît 
+                nous mettant en garde que le rafraîchissement va répéter les actions qui 
+                ont été faites lors de l'ouverture de la page "action-creation.fr".
+            </p>
+        </section>
+        <div style="position:absolute; top:600px;">
+            <p>
+                <hr>
+                <a href="../lecon4.html">Retour</a>
+            </p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>The HTML5 Herald</title>
+    <meta name="description" content="The HTML5 basic page">
+    <meta name="author" content="Patrice DE GABBIA">
+
+    <style type="text/css">
+        /*Mise en page de l'environement : en-tête et pied de page */
+        body{position:absolute; margin:0 ; padding:0; min-height:100%; width:100%; font-family:Helvetica, sans-serif;}
+        header{position:fixed; height:200px; min-width:98%; left:1%;
+            background-color:deepskyblue; z-index:10;}
+        #titre{max-width:auto; text-align:center;}
+        #imageExemple{position:absolute; right:0; top:0;}
+        #imageExemple img {height:200px;}
+        main{position:relative; height:100%; width:98%;
+            margin: 200px auto 70px auto; /*obligatoire pour décaler la box et non le texte en haut et en bas.*/
+            text-align:center;}
+        footer{position:absolute; bottom:0; height:50px; width:98%; left:1%;
+            background-color:springgreen;text-align:center; padding-top:20px;}
+
+
+        /* Modification générale */
+        .partie1 {position:relative; display:flex; padding:50px 0px 50px 0px; width:100%; height:100% ; justify-content: center;}
+        .partie2 {position:relative; width:100%;}
+        form{font: 16px Georgia, Times; text-align: left;}
+        label {font-weight: bold;} 
+        ul {list-style-type: none; margin: -5px 0px 0px -20px;}
+
+        /*Positionnement du formulaire et mise en place de son cadre */
+        .formulaire{width: 400px; height: 340px;  border: 2px solid rgb(190, 189, 189); box-shadow : 0px 0px 2px rgb(238, 238, 238);}
+
+        /*Positionnement du titre du formulaire */
+        .titre{display:inline-block; position:relative; top:-9px; left:10px; margin:0; padding: 0px 5px 0px 5px; background-color: white;}
+            
+        /*Transformation des labels en blocks et en lignes. Ensuite on pourra utiliser width etc. */
+        .formulaire label{display:inline-block; width: 120px; margin: 0px 0px 10px 0px;}
+
+        /*Mise en forme des champs de saisies */
+        .formulaire input{width: 180px; border: 1px solid rgb(190, 189, 189); box-shadow : 1px -1px 1px rgb(190, 189, 189); padding: 5px 0px 5px 0px;}
+            
+        /*Mise en forme de la zone de texte */
+        .formulaire textarea{border: 2px solid rgb(197, 195, 195); margin: -10px 0px 10px 0px;}
+
+        /*Mise en forme du champ permettant d'uploader une image */
+        .formulaire .labelUpload{display:inline-block; width:200px; margin-top: 5px;}
+        .formulaire input[type="file"]{border:none; box-shadow: none; width:380px; margin: -10px 0px 10px 0px;}
+
+        /*Mise en forme de l'iframe */
+        iframe{width:100%; height: 400px;} 
+  
+    </style>
+
+</head>
+
+<body>  
+    <header>
+        <div id='titre'>
+            <h1>Leçon n°4</h1>
+            <h2>Exercice 5</h2>
+            <a href='../lecon4.html'><b>Retour</b></a><br><br>
+        </div>
+    </header>
+    <main>
+        <div class="partie1">
+            <form class="formulaire" action='http://www.action-creation.fr/cnam/HTML_CSS/chapitre4/validateForm.php' method='post' target='resultFormulaire' enctype="multipart/form-data">
+                <p class='titre'>Formulaire de forum</p>
+                <ul>
+                    <li>
+                        <label for="champ1">Nom : </label>
+                        <input type="text" name="nom" id="champ1" >
+                    </li>
+                    <li>
+                        <label for="champ2">Prénom : </label>
+                        <input type="text" name="prenom" id="champ2" >
+                    </li>
+                    <li>
+                        <label for="champ3">Adresse e-mail : </label>
+                        <input type="email" name="email" id="champ3" >
+                    </li>
+                    <li>
+                        <label for="message">Message :</label>
+                        <textarea name="message" cols="40" rows="3" id="message"></textarea>
+                    </li>
+                    <li>
+                        <label for="upload"><span class="labelUpload">Ajouter une image : </span></label>
+                        <input type="file" name="image" id="upload">
+                    </li>
+                    <li>
+                        <input type="hidden" name="specialMode" value="forum" id="upload">
+                        <button type="submit" name="envoi" value="normal">Normal</button>
+                        <button type="submit" name="envoi" value="important">Important</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <div class="partie2">
+            <iframe name="resultFormulaire"></iframe>
+        </div>
+    </main>
+    <footer>
+        <b>Pied de page</b>
+    </footer>
+</body>
+</html>

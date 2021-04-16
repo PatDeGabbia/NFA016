@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Leçon 3 exercices</title>
+        <meta name="description" content="Exercices leçon 4">
+        <meta name="author" content="Patrice DE GABBIA">
+        <style type="text/css">
+
+            /* Modification générale */
+            body{position:absolute; top: 20px; left: 20px; font: 16px Georgia, Times;}
+            label {font-weight: bold;} 
+            ul {list-style-type: none;}
+
+            /*Positionnement des formulaires et mise en place de leur cadre */
+            .section{margin: 0px 0px 50px 0px; width: 550px; border: 2px solid rgb(238, 238, 238); box-shadow : 0px 0px 2px rgb(238, 238, 238);}
+
+            /*Positionnement des titres des formulaires */
+            .titre{margin: -7px 0px 0px 10px;}
+            
+            /*Transformation des label en block et en ligne. Ensuite on pourra utiliser width etc. */
+            .formulaire label{display:inline-block;}
+
+            /*Mise en forme du formulaire coordonnées */
+            .formulaire1 input{width: 180px; border: 1px solid rgb(238, 238, 238); padding: 5px 0px 5px 0px;}
+            .formulaire1 label{width: 200px; margin: 0px 0px 10px 0px;}
+            
+            /*formulaire réservation */
+                /*Mise en forme du type de chambre. L'astuce est d'enrober la sélection dans un bloc "div" pour masquer la flèche et la remplacer par un symbole */
+            .formulaire2 ul li:first-child label{width:150px; margin-bottom: 6px;}
+            .formulaire2 .selectionChambre {display: inline-block; width:140px; border: 2px solid rgb(197, 195, 195); padding:0px; margin-bottom:-8px; overflow: hidden;}
+            .formulaire2 select{border:none; min-width: 130%; padding-bottom: -3px;} /*ici on supprime le cadre du select et on fait déborder le select sur la droite ce qui cache la flèche */ 
+                /*On ajoute une flèche */
+            .formulaire2 .selectionChambre::after{content:"\25BC"; display:block; position:relative; float:right; top:-17px; right:3px; margin-bottom: -27px;}
+                /*Mise en forme de la vue et des options */
+                    /*On supprime les cases à cocher par défaut */
+            .container input[type="radio"], .container input[type="checkbox"]{display: none;}
+                    /*On positionne les "div" en ligne et on les positionne */
+            .container {display:inline-block; margin:5px 30px 5px 0px;}
+            .container label {position: relative;}
+            .container span::before, .container span::after {content: ''; position: absolute; top: 0; bottom: 10px; margin: auto;}
+                    /*On change le curseur de la souris lorsqu'on survole les cases à cocher */
+            .container span.radio:hover,  .container span.checkbox:hover{cursor: pointer;}
+                    /*On créé les nouvelles cases à cocher, CSS commun aux 2 types de cases à cocher*/
+            .container span.radio::before, .container span.checkbox::before{left: -20px; width:12px; height: 12px; box-shadow: 0px 0px 1px rgb(197, 195, 195); 
+            border: 1px solid rgb(197, 195, 195); background-color: rgb(238, 238, 238);}
+            .container span.radio::after, .container span.checkbox::after{left: -20px; width: 12px; height: 12px; box-shadow: 0px 0px 1px rgb(197, 195, 195);
+            border: 1px solid rgb(197, 195, 195); background-color: rgb(238, 238, 238);}
+            input[type="radio"]:checked + label span.radio::after, input[type="checkbox"]:checked + label span.checkbox::after{background-color: rgb(156, 154, 154);}
+                    /*Spécificité entre les 2 types de cases à cocher */
+            .container span.radio::before, .container span.radio::after{border-radius: 10px;}
+            .container span.checkbox::before, .container span.checkbox::after{border-radius: 3px;}
+                    /*On met une taille aux titres "vue" et "option" pour aligner les cases à cocher */
+            .container .containerTitre{width:65px;}
+                    /*On met la liste en minuscule */
+            .container span{font-weight:normal;}
+                    /*Ajout des 3 points noirs... On se demande ce qu'ils font là :/ */
+            .pointNoir{position:relative; width:5px; height:10px; margin:0; left:-25px;}
+            .pointNoir::after{content:"\2022";}
+                /*Mise en forme des demandes spéciales */
+            .formulaire2 ul li:last-child label{margin: 10px 0px 0px 0px; width:400px;}
+            .formulaire2 textarea{border: 2px solid rgb(197, 195, 195); margin-top: -2px;}
+
+            /*Mise en forme du bouton "Envoyer" */
+            .sectionValidation button {background-color: rgb(238, 238, 238); border: 1px solid black; border-radius: 2px; padding: 1px 6px; 
+            text-align: center; margin: 0px 0px 0px -40px;}
+            .sectionValidation button:hover {opacity:.85; cursor: pointer;}
+
+        </style>
+    </head>
+    <body>
+        <form class="formulaire" action='http://www.action-creation.fr/cnam/HTML_CSS/chapitre4/validateForm.php' method='get'>
+            <section class="section formulaire1">
+                <p class='titre'>Vos coordonnées</p>
+                <ul>
+                    <li>
+                        <label for="champ1">Nom : </label>
+                        <input type="text" name="nom" id="champ1" required>
+                    </li>
+                    <li>
+                        <label for="champ2">Prénom : </label>
+                        <input type="text" name="prenom" id="champ2" required>
+                    </li>
+                    <li>
+                        <label for="champ3">Adresse e-mail : </label>
+                        <input type="email" name="mail" id="champ3" required>
+                    </li>
+                    <li>
+                        <label for="champ4">Vérification adresse e-mail : </label>
+                        <input type="email" name="mailVerif" id="champ4" required>
+                    </li>
+                    <li>
+                        <label for="champ5">Mot de passe : </label>
+                        <input type="password" name="mdp" id="champ5" required>
+                    </li>
+                    <li>
+                        <label for="champ6">Vérification mot de passe : </label>
+                        <input type="password" name="mdpVerif" id="champ6" required>
+                    </li>
+                </ul>
+            </section>
+            <section class="section formulaire2">
+                <p class="titre">Votre réservation</p>
+                <ul>
+                    <li>
+                        <label for="champ7">Type de chambre : </label>
+                        <div class="selectionChambre">
+                            <select name="typeChambre" id="champ7">
+                                <option value="1">Deux lits king size</option>
+                                <option value="2">Un lit king size</option>
+                                <option value="3">Un lit simple</option>
+                            </select>
+                        </div>
+                    </li>
+                    <div class="container">
+                        <label class="containerTitre">Vue :</label>
+                        </div>
+                        <div class="container">
+                            <input type="radio" name="group1" id="radio-1">
+                            <label for="radio-1"><span class="radio">Parking</span></label>
+                          </div>
+                          <div class="container pointNoir"></div>
+                          <div class="container">
+                            <input type="radio" name="group1" id="radio-2">
+                            <label for="radio-2"><span class="radio">Jardin</span></label>
+                    </div>
+                    <br>
+                    <div class="container">
+                        <label class="containerTitre">Options :</label>
+                      </div>
+                        <div class="container">
+                          <input type="checkbox" name="group2" id="checkbox-1">
+                          <label for="checkbox-1"><span class="checkbox">Parking</span></label>
+                        </div>
+                        <div class="container pointNoir"></div>
+                        <div class="container">
+                          <input type="checkbox" name="group2" id="checkbox-2">
+                          <label for="checkbox-2"><span class="checkbox">Petit déjeuner</span></label>
+                        </div>
+                        <div class="container pointNoir"></div>
+                        <div class="container">
+                          <input type="checkbox" name="group2" id="checkbox-3">
+                          <label for="checkbox-3"><span class="checkbox">Accès à la piscine</span></label>
+                        </div>
+                    <li>
+                        <label for="message">Demandes spéciales :</label>
+                        <textarea name="demandeSpec" cols="37" rows="3" id="message"></textarea>
+                    </li>
+                </ul>
+            </section>
+            <section class="sectionValidation">
+                <ul>
+                    <li>
+                        <button type="submit">Envoyer</button>
+                    </li>
+                </ul>
+            </section>
+        </form>
+
+
+        <div style="position:absolute; top:700px;">
+            <p>
+                <hr>
+                <a href="../lecon4.html">Retour</a>
+            </p>
+        </div>
+    </body>
+</html>
