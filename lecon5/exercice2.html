@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leçon 5 projet</title>
+    <meta name="description" content="Leçon 5">
+    <meta name="author" content="Patrice DE GABBIA">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style type="text/css">
+        body{width: 945px; text-align: center; margin: auto;
+            background-color: #f5f0ed; background-image: url(images/background.png); 
+            font-family:Times, 'Times New Roman', serif; font-size: 14px;
+            display:grid; grid-template-columns: [col-1] 240px [col-2] 240px [col-3] 240px [col-4] 240px [end];
+            grid-template-rows: [row-1] 160px [row-2] 280px [row-3] 96px [row-4] 180px [row-5] 180px [row-6] 180px [row-7] 180px [row-8] 157px [row-9] 80px;}
+
+        .titreTop, .titreMiddle, .titreBottom{margin: 30px 0px 30px 0px;}
+        .titreTop{background-image: url("images/top.png"); background-repeat: no-repeat;}
+        .titreMiddle{background-image: url("images/middle.png"); background-repeat: no-repeat;}
+        .titreBottom{background-image: url("images/bottom.png"); background-repeat: no-repeat;}
+        .copyright{margin-top: 10px;}
+
+        article{width: 228px; background: rgba(252, 248, 246, 0.6);
+            border: solid; border-width: 1px;  border-color: #e0dcd9; border-radius: 10px; margin-bottom: 10px;}
+
+        h1{color:#b8b5b4; font-style: italic; font-size: 14px; margin:12px 0px 0px 0px;}
+        h2{color:black; font-family: serif; font-size: 12px; margin:8px 0px 0px 0px;}
+        h2::first-letter{font-size: 14px;}
+        .references h2{margin:8px 0px 10px 0px;}
+        .letter{float: left; font-size: 54px; text-align: left; margin: 0px 0px -23px 0px; padding: 0;}
+        .texte{text-align: left; margin: 0px 10px 0px 10px;}
+        .red{color:#af1d21;}
+        .arrow{position: relative;  top: 2px;}
+        .interligne{line-height: 150%;}
+        
+        .copyrightText{color: #9e9a99; font-size: 14px; margin:12px 0px 0px 0px;}
+        .copyrigthtSousLigner{color:#b8b5b4; text-decoration: underline; font-size: 14px; margin:12px 0px 0px 0px;}
+
+        .titreTop{grid-area: row-1 / col-1 / row-1 / end;}
+        .detailEl1{grid-area: row-2 / col-1;}
+        .detailEl2{grid-area: row-2 / col-2;}
+        .detailEl3{grid-area: row-2 / col-3;}
+        .detailEl4{grid-area: row-2 / col-4;}
+        .titreMiddle{grid-area: row-3 / col-1 / row-3 / end;}
+        .referencesEl1{grid-area: row-4 / col-1;}
+        .referencesEl2{grid-area: row-4 / col-2;}
+        .referencesEl3{grid-area: row-4 / col-3;}
+        .referencesEl4{grid-area: row-4 / col-4;}
+        .referencesEl5{grid-area: row-5 / col-1;}
+        .referencesEl6{grid-area: row-5 / col-2;}
+        .referencesEl7{grid-area: row-5 / col-3;}
+        .referencesEl8{grid-area: row-5 / col-4;}
+        .referencesEl9{grid-area: row-6 / col-1;}
+        .referencesEl10{grid-area: row-6 / col-2;}
+        .referencesEl11{grid-area: row-6 / col-3;}
+        .referencesEl12{grid-area: row-6 / col-4;}
+        .referencesEl13{grid-area: row-7 / col-1;}
+        .referencesEl14{grid-area: row-7 / col-2;}
+        .referencesEl15{grid-area: row-7 / col-3;}
+        .referencesEl16{grid-area: row-7 / col-4;}
+        .titreBottom{grid-area: row-8 / col-1 / row-8 / end;}
+        .copyright{grid-area: row-9 / col-1 / row-9 / end;}
+
+        @media all and (max-width :1000px) and (min-width :500px) {
+            body{width: 500px; grid-template-columns: [col-1] 240px [col-2] 240px [end];
+                grid-template-rows: [row-1] 160px [row-2] 280px [row-3] 280px [row-4] 96px [row-5] 180px [row-6] 180px [row-7] 180px [row-8] 180px 
+                [row-9] 180px [row-10] 180px [row-11] 180px [row-12] 180px [row-13] 157px [row-14] 80px;}
+            .titreTop{background-image: url("images/top470.png"); background-repeat: no-repeat;}
+            .titreMiddle{background-image: url("images/middle470.png"); background-repeat: no-repeat;}
+            .titreBottom{background-image: url("images/bottom470.png"); background-repeat: no-repeat;}
+            .titreTop{grid-area: row-1 / col-1 / row-1 / end;}
+            .detailEl1{grid-area: row-2 / col-1;}
+            .detailEl2{grid-area: row-2 / col-2;}
+            .detailEl3{grid-area: row-3 / col-1;}
+            .detailEl4{grid-area: row-3 / col-2;}
+            .titreMiddle{grid-area: row-4 / col-1 / row-4 / end;}
+            .referencesEl1{grid-area: row-5 / col-1;}
+            .referencesEl2{grid-area: row-5 / col-2;}
+            .referencesEl3{grid-area: row-6 / col-1;}
+            .referencesEl4{grid-area: row-6 / col-2;}
+            .referencesEl5{grid-area: row-7 / col-1;}
+            .referencesEl6{grid-area: row-7 / col-2;}
+            .referencesEl7{grid-area: row-8 / col-1;}
+            .referencesEl8{grid-area: row-8 / col-2;}
+            .referencesEl9{grid-area: row-9 / col-1;}
+            .referencesEl10{grid-area: row-9 / col-2;}
+            .referencesEl11{grid-area: row-10 / col-1;}
+            .referencesEl12{grid-area: row-10 / col-2;}
+            .referencesEl13{grid-area: row-11 / col-1;}
+            .referencesEl14{grid-area: row-11 / col-2;}
+            .referencesEl15{grid-area: row-12 / col-1;}
+            .referencesEl16{grid-area: row-12 / col-2;}
+            .titreBottom{grid-area: row-13 / col-1 / row-13 / end;}
+            .copyright{grid-area: row-14 / col-1 / row-14 / end;}}
+
+        @media all and (max-width :500px) {
+            body{width: 309px; grid-template-columns: [col-1] 309px [end];
+                grid-template-rows: [row-1] 160px [row-2] 280px [row-3] 280px [row-4] 280px [row-5] 280px [row-6] 96px [row-7] 180px [row-8] 180px [row-9] 180px [row-10] 180px 
+                [row-11] 180px [row-12] 180px [row-13] 180px [row-14] 180px [row-15] 180px [row-16] 180px [row-17] 180px [row-18] 180px 
+                [row-19] 180px [row-20] 180px [row-21] 180px [row-22] 180px [row-23] 157px [row-24] 80px;}
+            article{width: 309px;}
+            .titreTop{background-image: url("images/top309.png"); background-repeat: no-repeat;}
+            .titreMiddle{background-image: url("images/middle309.png"); background-repeat: no-repeat;}
+            .titreBottom{background-image: url("images/bottom309.png"); background-repeat: no-repeat;}
+            .titreTop{grid-area: row-1 / col-1;}
+            .detailEl1{grid-area: row-2 / col-1;}
+            .detailEl2{grid-area: row-3 / col-1;}
+            .detailEl3{grid-area: row-4 / col-1;}
+            .detailEl4{grid-area: row-5 / col-1;}
+            .titreMiddle{grid-area: row-6 / col-1;}
+            .referencesEl1{grid-area: row-7 / col-1;}
+            .referencesEl2{grid-area: row-8 / col-1;}
+            .referencesEl3{grid-area: row-9 / col-1;}
+            .referencesEl4{grid-area: row-10 / col-1;}
+            .referencesEl5{grid-area: row-11 / col-1;}
+            .referencesEl6{grid-area: row-12 / col-1;}
+            .referencesEl7{grid-area: row-13 / col-1;}
+            .referencesEl8{grid-area: row-14 / col-1;}
+            .referencesEl9{grid-area: row-15 / col-1;}
+            .referencesEl10{grid-area: row-16 / col-1;}
+            .referencesEl11{grid-area: row-17 / col-1;}
+            .referencesEl12{grid-area: row-18 / col-1;}
+            .referencesEl13{grid-area: row-19 / col-1;}
+            .referencesEl14{grid-area: row-20 / col-1;}
+            .referencesEl15{grid-area: row-21 / col-1;}
+            .referencesEl16{grid-area: row-22 / col-1;}
+            .titreBottom{grid-area: row-23 / col-1;}
+            .copyright{grid-area: row-24 / col-1;}}
+        }
+    </style>
+
+</head>
+<body>
+
+    <img class="titreTop" alt=" ">
+
+    <article class="detailEl1">
+        <h1>Bottled for your pleasure</h1>
+        <h2>POTTED AUTOBIOGRAPHY</h2>
+        <img src="images/cochon.png" alt="picture of a pig">
+        <div class='texte'>
+            <span class="letter red">H</span>
+            <span class="red">ello.</span>
+            I'm a designer. I also do
+            plenty of writting speaking,
+            and sleeping. I'm based in
+            Nottingham, England, but my work
+            means I'm often in all sorts of
+            other fine places.
+            <span class="red">Please read on</span>
+            <span class="arrow red">&rarr;</span>
+        </div>
+    </article>
+    <article class="detailEl2">
+        <h1>Dropping science like it's hot</h1>
+        <h2>THE SPLENDID JOURNAL</h2>
+        <img src="images/papillon.png" alt="picture of a butterfly">
+        <div class='texte'>
+            <span class="letter red">&sect;</span>
+            <span class="red">Yet another year in review</span>
+            Having summarised my year as 
+            both 2010 and 2011 drew to a
+            close, I'm learning to enjoy
+            writing these reviews now. Early
+            worries about being...
+            <span class="red">More</span>
+            <span class="arrow red">&rarr;</span>
+        </div>
+    </article>
+    <article class="detailEl3">
+        <h1>Catalogued nocturnal matter</h1>
+        <h2>EXHAUSTIVE ARCHIVES</h2>
+        <img src="images/poisson.png" alt="picture of a fish">
+        <div class='texte'>
+            <span class="interligne red">862</span>
+            <span class="red">&mdash;</span>
+            <span class="interligne red">Yet another year in music</span><br>
+            <span class="interligne red">866</span>
+            <span class="red">&mdash;</span>
+            <span class="interligne red">iPhone vidéo experiment</span><br>
+            <span class="interligne red">861</span>
+            <span class="red">&mdash;</span>
+            <span class="interligne red">Creative Mornings NYC</span><br>
+            <span class="interligne red">860</span>
+            <span class="red">&mdash;</span>
+            <span class="interligne red">Make something you love</span><br>
+            <span class="interligne red">859</span>
+            <span class="red">&mdash;</span>
+            <span class="interligne red">AIGA Design Camp</span><br>
+        </div>
+    </article>
+    <article class="detailEl4">
+        <h1>Mr. Collison is currently</h1>
+        <h2>RECEIVING YOUR EMAILS</h2>
+        <img src="images/crabe.png" alt="picture of a crab">
+        <div class='texte'>
+            <span class="letter red">O</span>
+            <span class="red">Pinions & queries this way</span>
+            Drop me a line if you wish.
+            I'm always interested in new
+            projects and opportunities and will of
+            course do my best to reply to your
+            emails swiftly and efficiently.
+            <span class="arrow red">&rarr;</span>
+        </div>
+    </article>
+
+    <img class="titreMiddle" alt=" ">
+
+    <article class="references referencesEl1">
+        <h1>A very proud member of those</h1>
+        <h2>FICTIVE KIN</h2>
+        <img src="images/scarab.png" alt="picture of a beetle (scarabé)">
+    </article>
+    <article class="references referencesEl2">
+        <h1>Mr. Collison organises some</h1>
+        <h2>NEW ADVENTURES</h2>
+        <img src="images/fugu.png" alt="picture of a fish fugu">
+    </article>
+    <article class="references referencesEl3">
+        <h1>Images from the field</h1>
+        <h2>FLICKR PHOTOGRAPHS</h2>
+        <img src="images/poux.png" alt="picture of a louse (pou)">
+    </article>
+    <article class="references referencesEl4">
+        <h1>The tweets of @colly</h1>
+        <h2>FOLLOW ME ON TWITTER</h2>
+        <img src="images/salamandre.png" alt="picture of a salamander">
+    </article>
+
+    <article class="references referencesEl5">
+        <h1>Conference and speaking history</h1>
+        <h2>LANYRD PROFILE</h2>
+        <img src="images/criquet.png" alt="picture of a locust (criquet)">
+    </article>
+    <article class="references referencesEl6">
+        <h1>Bringing fans and bands together</h1>
+        <h2>RUSHMORE FM</h2>
+        <img src="images/gardon.png" alt="picture of a fish (gardon)">
+    </article>
+    <article class="references referencesEl7">
+        <h1>Sneaky-peeks at my designs</h1>
+        <h2>DRIBBLE SHOTS</h2>
+        <img src="images/lezard.png" alt="picture of a lizard (lézard)">
+    </article>
+    <article class="references referencesEl8">
+        <h1>Retro-filtered iPhone Photos</h1>
+        <h2>INSTAGRAM PHOTOS</h2>
+        <img src="images/perche.png" alt="picture of a fish (perche)">
+    </article>
+
+    <article class="references referencesEl9">
+        <h1>Streaming day and night</h1>
+        <h2>RDIO PROFILE</h2>
+        <img src="images/lievre.png" alt="picture of a hare (lièvre)">
+    </article>
+    <article class="references referencesEl10">
+        <h1>Ignoring old acquaitances</h1>
+        <h2>BLOODY FACEBOOK</h2>
+        <img src="images/vipere.png" alt="picture of a snake (vipère)">
+    </article>
+    <article class="references referencesEl11">
+        <h1>Collected internet oddments</h1>
+        <h2>GIMME BAR</h2>
+        <img src="images/bee.png" alt="picture of a bee (abeille)">
+    </article>
+    <article class="references referencesEl12">
+        <h1>I've been, therefore I am</h1>
+        <h2>FOURSQUARE CHECKINS</h2>
+        <img src="images/dodo.png" alt="picture of a dodo bird (dodo)">
+    </article>
+
+    <article class="references referencesEl13">
+        <h1>Slides from my presentations</h1>
+        <h2>SPEAKER DECK</h2>
+        <img src="images/homard.png" alt="picture of a lobster (homard)">
+    </article>
+    <article class="references referencesEl14">
+        <h1>Playing on the gramophone</h1>
+        <h2>LAST.FM SCROBBLES</h2>
+        <img src="images/collie.png" alt="picture of a dog (chien)">
+    </article>
+    <article class="references referencesEl15">
+        <h1>It's better than Linkedln y'know</h1>
+        <h2>ZERPLY PROFILE</h2>
+        <img src="images/fishduck.png" alt="picture of a fishduck (poisson aux pattes de canard)">
+    </article>
+    <article class="references referencesEl16">
+        <h1>Amateurish moving pictures</h1>
+        <h2>VIMEO CHANNEL</h2>
+        <img src="images/turtle.png" alt="picture of a turtle (tortue)">
+    </article>
+
+        <img class="titreBottom" alt=" ">
+
+    <div class="copyright">
+        <span class="copyrightText">Copyright &copy; Mr. Simon Collison 2003-2013. Protected and licensed under a</span>
+        <span class="copyrigthtSousLigner">Creative Commons License</span>
+        <span class="copyrightText">Grab the</span>
+        <span class="copyrigthtSousLigner">RSS feed</span><br>
+        <span class="copyrightText">Engineered in Nottingham, scaffolded by</span>
+        <span class="copyrigthtSousLigner">ExpressionEngine,</span>
+        <span class="copyrightText">steam-pumped by</span>
+        <span class="copyrigthtSousLigner">United</span>
+        <span class="copyrightText">& kept alive with tea and roll-ups.</span>
+    </div>
+
+</body>
+</html>
