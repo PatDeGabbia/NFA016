@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Leçon 7 JQuery</title>
+    <meta name="description" content="The HTML5 and JQuery basic page">
+    <meta name="author" content="Arnaud Renard">
+    <style>
+		span{font-weight: bold;}
+	</style>
+</head>
+
+<body> 
+	<p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis delectus culpa consequuntur asperiores
+        <span id="texte1">ici mon texte particulier</span>
+        <span id="texte2">et maintenant mon texte modifié</span> 
+        quis architecto cumque tempore quibusdam nihil, corrupti ea, nam cupiditate tempora molestias. Sapiente nobis 
+        neque provident officia, ullam error facilis, nesciunt culpa tempore molestiae ipsa, animi quod? Ipsa quasi 
+        labore est id maiores placeat officiis pariatur aut?
+    </p>
+
+
+    <div style="position:absolute; top:700px;">
+        <p>
+            <hr>
+            <a style="color: blue;" href="../lecon7.html">Retour</a>
+        </p>
+    </div>
+    
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#texte2").hide();
+            $("p").hover(
+                function(){
+                    $("#texte1").hide();
+                    $("#texte2").show();
+                }, 
+                function(){
+                    $("#texte1").show();
+                    $("#texte2").hide();
+                },
+            );
+        });
+        
+	</script>
+
+</body>
+</html>

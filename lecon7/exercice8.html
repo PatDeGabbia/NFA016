@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Leçon 7 JQuery</title>
+    <meta name="description" content="The HTML5 and JQuery basic page">
+    <meta name="author" content="Arnaud Renard">
+    <style>
+		
+	</style>
+</head>
+
+<body> 
+	<p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus illum explicabo numquam vero eius quisquam 
+        libero adipisci expedita laborum facilis, unde et provident optio fugiat tempore itaque repudiandae sequi voluptatum 
+        perferendis! Numquam vel velit architecto id blanditiis veritatis quibusdam, error recusandae saepe exercitationem minima 
+        pariatur fuga minus similique voluptate rem.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolor temporibus iusto debitis facere, sint consectetur 
+        porro eveniet quae voluptate sed quis cumque ipsa aspernatur, molestias possimus nobis? Ad, dolorem!
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, et, non nihil id provident molestias consequatur 
+        totam dignissimos reiciendis possimus quis. Dolor dignissimos in, nemo, id obcaecati necessitatibus eius reiciendis 
+        sequi reprehenderit enim porro et quibusdam facilis illo minus autem. Minima ratione nobis iste eum optio, molestias molestiae, 
+        qui reprehenderit saepe veritatis aut sequi quisquam iure numquam dolores a voluptatibus illum earum ab adipisci culpa eveniet 
+        tempore hic! Distinctio cupiditate quos ut accusamus sint? Optio repellendus cum laboriosam officia suscipit soluta incidunt enim. 
+        Illo optio nostrum et dicta similique beatae rerum fugit, commodi sed perferendis quisquam impedit consectetur voluptatibus minus!
+    </p>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+		$(document).ready(function(){
+            $("p").click(function(){
+                $("p").css({"font-weight":"normal"});
+                $(this).css({"font-weight":"bold"});
+            });
+        });
+	</script>
+
+    <div style="position:absolute; top:700px;">
+        <p>
+            <hr>
+            <a style="color: blue;" href="../lecon7.html">Retour</a>
+        </p>
+    </div>
+
+</body>
+</html>

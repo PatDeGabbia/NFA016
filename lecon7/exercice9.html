@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Leçon 7 JQuery</title>
+    <meta name="description" content="The HTML5 and JQuery basic page">
+    <meta name="author" content="Arnaud Renard">
+    <style>
+		.monRectangle{width:400px; height:300px; background-color: coral;}
+	</style>
+</head>
+
+<body> 
+	<div class="monRectangle"></div><br>
+    <button id="bouton1" type="submit" name="envoi" value="normal" onclick="fonctionBouton1()">Bouton 1</button>
+    <button id="bouton2" type="submit" name="envoi" value="normal" onclick="fonctionBouton2()">Bouton 2</button>
+    <button id="bouton3" type="submit" name="envoi" value="normal"onclick="fonctionBouton3()">Bouton 3</button>
+    <button id="bouton4" type="submit" name="envoi" value="normal"onclick="fonctionBouton4()">Bouton 4</button>
+    <button id="bouton5" type="submit" name="envoi" value="normal"onclick="fonctionBouton5()">Bouton 5</button>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        function fonctionBouton1(){$(".monRectangle").css({"height":"500px"});}
+		function fonctionBouton2(){$(".monRectangle").css({"background-color":"green"});}
+        function fonctionBouton3(){$(".monRectangle").css({"background-color":"coral"});}
+        function fonctionBouton4(){$(".monRectangle").hide();}
+        function fonctionBouton5(){$(".monRectangle").show();}
+	</script>
+
+    <div style="position:absolute; top:700px;">
+        <p>
+            <hr>
+            <a style="color: blue;" href="../lecon7.html">Retour</a>
+        </p>
+    </div>
+
+</body>
+</html>

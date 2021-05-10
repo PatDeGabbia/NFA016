@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+	<meta charset="UTF-8">
+	<title>Leçon 7 JQuery</title>
+	<style>
+	img{border:3px solid #ffffff;margin:1px 3px;}
+	</style>
+</head>
+<body>
+	<img src='./images/image0.jpg'>
+    <img src='./images/image0.jpg'>
+    <img src='./images/image0.jpg'>
+    <img src='./images/image0.jpg'>
+    <img src='./images/image0.jpg'>
+    <img src='./images/image0.jpg'>
+    <img src='./images/image0.jpg'>
+    <img src='./images/image0.jpg'>
+    <img src='./images/image0.jpg'>
+    <img src='./images/image0.jpg'>
+    <img src='./images/image0.jpg'>
+    <img src='./images/image0.jpg'>
+    <img src='./images/image0.jpg'>
+    <img src='./images/image0.jpg'>
+    <img src='./images/image0.jpg'>
+    <img src='./images/image0.jpg'>
+    <img src='./images/image0.jpg'>
+
+
+    <div style="position:absolute; top:700px;">
+        <p>
+            <hr>
+            <a style="color: blue;" href="../lecon7.html">Retour</a>
+        </p>
+    </div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("img").click(function(){
+            $("img").css({"border-color":"#ffffff"});
+			$(this).css({"border-color": "#ff0000"});
+		});
+	});
+</script>
+
+
+
+</body>
+</html>

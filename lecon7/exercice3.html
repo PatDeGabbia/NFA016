@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Leçon 7 JQuery</title>
+    <meta name="description" content="The HTML5 and JQuery basic page">
+    <meta name="author" content="Arnaud Renard">
+    <style>
+		th{border: solid;}
+	</style>
+</head>
+
+<body> 
+	<table>
+        <tr>
+            <th>Ligne 1 case 1</th>
+            <th>Ligne 1 case 2</th>
+            <th>Ligne 1 case 3</th>
+        </tr>
+        <tr>
+            <th>Ligne 2 case 1</th>
+            <th>Ligne 2 case 2</th>
+            <th>Ligne 2 case 3</th>
+        </tr>
+        <tr>
+            <th>Ligne 3 case 1</th>
+            <th>Ligne 3 case 2</th>
+            <th>Ligne 3 case 3</th>
+        </tr>
+    </table>    
+    
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+		$("tr:odd th").css({"border-color":"green"});
+	</script>
+    <div style="position:absolute; top:700px;">
+        <p>
+            <hr>
+            <a style="color: blue;" href="../lecon7.html">Retour</a>
+        </p>
+    </div>
+</body>
+</html>

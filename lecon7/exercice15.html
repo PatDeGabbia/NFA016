@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Leçon 7 JQuery</title>
+    <meta name="description" content="The HTML5 and JQuery basic page">
+    <meta name="author" content="Arnaud Renard">
+    <style>
+		body{width:500px;}
+	</style>
+</head>
+
+<body> 
+	<p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad eligendi dolores, 
+        voluptatum incidunt delectus molestias repellat porro cupiditate consequuntur aut 
+        beatae vero excepturi praesentium totam explicabo mollitia. Quod ea, et cupiditate 
+        assumenda eum quos ab delectus ullam! Praesentium expedita optio iure ducimus impedit 
+        deserunt, in, architecto placeat, sed tempora doloribus.
+    </p>
+
+
+    <div style="position:absolute; top:700px;">
+        <p>
+            <hr>
+            <a style="color: blue;" href="../lecon7.html">Retour</a>
+        </p>
+    </div>
+    
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("p").click(
+                function(){
+                    $("body").css({"width":"100%"});
+                    $("p").css({"text-align":"center", "word-spacing":"999999px"});
+                }
+            );
+            $("p").dblclick(
+                function(){
+                    $("p").css({"text-align":"left", "word-spacing":"normal"});
+                    $("body").css({"width":"500px"});
+                }
+            );
+        });
+        
+	</script>
+
+</body>
+</html>
