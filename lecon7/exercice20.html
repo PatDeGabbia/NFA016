@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Leçon 7 JQuery</title>
+    <meta name="description" content="The HTML5 and JQuery basic page">
+    <meta name="author" content="Arnaud Renard">
+    <style>
+        body{width: 800px; margin: 20px auto;}
+		.popin{display:none; position:absolute; margin: auto; width: 600px;}
+        .popin p{text-align: center;}
+        .croix{position: relative; top: 15px; left: 585px}
+	</style>
+</head>
+
+<body>
+    <div class="maPage">
+        <p>
+            C'est une plage de rêve bordée de cocotiers. Le sable est fin et tout respire la chaleur. 
+            La mer turquoise nous tend ses bras en nous promettant une douce fraîcheur.
+        </p>
+        <button class="monBouton" type="submit" name="envoi" value="normal">Voir</button>
+
+
+        <div style="position:absolute; top:700px;">
+            <p>
+                <hr>
+                <a style="color: blue;" href="../lecon7.html">Retour</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="popin">
+        <img class="croix" src="./images/croix.png">
+        <img src="./images/cana1.jpg">
+        <p>
+            On aimerait bien y être :)
+        </p>
+    </div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".monBouton").click(
+                function(e){
+                    e.stopPropagation();
+                    $(".popin").css({"display":"inherit"});
+                    $(".maPage").css({"opacity":"0.2"});
+                    return e.preventDefault();
+                }
+            );
+            $(".croix").click(
+                function(e){
+                    e.stopPropagation();
+                    $(".popin").css({"display":"none"});
+                    $(".maPage").css({"opacity":"1"});
+                }
+            );
+        });
+        
+	</script>
+
+</body>
+</html>

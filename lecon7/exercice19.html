@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Leçon 7 JQuery</title>
+    <meta name="description" content="The HTML5 and JQuery basic page">
+    <meta name="author" content="Arnaud Renard">
+    <style>
+        body{width: 500px; margin: 20px auto;}
+		.monTitre{background-color: lightsteelblue; height: 20px;}
+        .monTexte{display:none; background-color: lightgrey;}
+	</style>
+</head>
+
+<body>
+    <div class="monTitre">
+        double clique pour lire l'article
+    </div>
+    <div class="monTexte">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus illum explicabo numquam vero eius quisquam 
+        libero adipisci expedita laborum facilis, unde et provident optio fugiat tempore itaque repudiandae sequi voluptatum 
+        perferendis! Numquam vel velit architecto id blanditiis veritatis quibusdam, error recusandae saepe exercitationem minima 
+        pariatur fuga minus similique voluptate rem.
+    </div>
+
+
+    <div style="position:absolute; top:700px;">
+        <p>
+            <hr>
+            <a style="color: blue;" href="../lecon7.html">Retour</a>
+        </p>
+    </div>
+    
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".monTitre").dblclick(
+                function(e){
+                    e.stopPropagation();
+                    $(".monTexte").css({"display":"inherit"});
+                }
+            );
+            $(".monTexte").click(
+                function(e){
+                    e.stopPropagation();
+                    $(".monTexte").css({"display":"none"});
+                }
+            );
+        });
+        
+	</script>
+
+</body>
+</html>

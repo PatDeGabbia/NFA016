@@ -5,13 +5,17 @@
     <meta name="description" content="The HTML5 and JQuery basic page">
     <meta name="author" content="Arnaud Renard">
     <style>
-		
+		body{width: 500px; margin: 20px auto;}
 	</style>
 </head>
 
 <body> 
 	<p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis delectus culpa consequuntur asperiores
+        quis architecto cumque tempore quibusdam nihil, corrupti ea, nam cupiditate tempora molestias. Sapiente nobis 
+        neque provident officia, ullam error facilis, nesciunt culpa tempore molestiae ipsa, animi quod? Ipsa quasi 
+        labore est id maiores placeat officiis pariatur aut?<br><br>
+        Pfffff mon navigateur ne connais pas la police Verdana !!
     </p>
 
 
@@ -26,19 +30,15 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
-            $("p").click(
+            $("p").hover(
                 function(e){
                     e.stopPropagation();
-                    $("p").css({"font-style":"normal"});
-                    $("p").css({"font-weight":"bold"});
-                }
-            );
-            $("p").dblclick(
+                    $("p").css({"font-family":"Noto Sans", "text-decoration":"line-through", "line-height":"200%", "font-size":"150%", "text-transform":"capitalize"});
+                }, 
                 function(e){
                     e.stopPropagation();
-                    $("p").css({"font-weight":"normal"});
-                    $("p").css({"font-style":"italic"});
-                }
+                    $("p").css({"font-family":"Verdana", "text-decoration":"none", "line-height":"100%", "font-size":"100%", "text-transform":"none"});
+                },
             );
         });
         

@@ -33,11 +33,13 @@
         $(document).ready(function(){
             $("#texte2").hide();
             $("p").hover(
-                function(){
+                function(e){
+                    e.stopPropagation();
                     $("#texte1").hide();
                     $("#texte2").show();
                 }, 
-                function(){
+                function(e){
+                    e.stopPropagation();
                     $("#texte1").show();
                     $("#texte2").hide();
                 },

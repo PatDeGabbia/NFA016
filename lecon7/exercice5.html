@@ -17,7 +17,8 @@
     <script>
 		$(document).ready(function(){
             $("img:not(.visible)").hide();
-            $("img").click(function(){
+            $("img").click(function(e){
+                e.stopPropagation();
                 $("img:not(.visible)").addClass("temporaire");
                 $(".visible").removeClass("visible")
                 $(".temporaire").addClass("visible").removeClass("temporaire");

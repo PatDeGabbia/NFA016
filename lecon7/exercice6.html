@@ -21,10 +21,12 @@
 		$(document).ready(function(){
             $(".formulaire").hide();
             $("#apparitionFormulaire").click(function(e){
+                e.stopPropagation();
                 $("#apparitionFormulaire").hide();
                 $(".formulaire").show();
             });
             $("button").click(function(e){
+                e.stopPropagation();
                 $(".formulaire").hide();
                 $("#apparitionFormulaire").show();
                 $("textarea").val("");

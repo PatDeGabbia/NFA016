@@ -27,17 +27,20 @@
     <script>
         $(document).ready(function(){
             $("span").hover(
-                function(){
+                function(e){
+                    e.stopPropagation();
                     $("span").css({"color":"#ff0000"});
                 }
             );
             $("span").click(
-                function(){
+                function(e){
+                    e.stopPropagation();
                     $("span").css({"color":"#009900"});
                 }
             );
             $("span").dblclick(
-                function(){
+                function(e){
+                    e.stopPropagation();
                     $("span").css({"color":"#0000ff"});
                 }
             );

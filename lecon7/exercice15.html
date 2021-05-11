@@ -31,13 +31,15 @@
     <script>
         $(document).ready(function(){
             $("p").click(
-                function(){
+                function(e){
+                    e.stopPropagation();
                     $("body").css({"width":"100%"});
                     $("p").css({"text-align":"center", "word-spacing":"999999px"});
                 }
             );
             $("p").dblclick(
-                function(){
+                function(e){
+                    e.stopPropagation();
                     $("p").css({"text-align":"left", "word-spacing":"normal"});
                     $("body").css({"width":"500px"});
                 }

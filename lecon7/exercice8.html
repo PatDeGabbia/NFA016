@@ -32,7 +32,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
 		$(document).ready(function(){
-            $("p").click(function(){
+            $("p").click(function(e){
+                e.stopPropagation();
                 $("p").css({"font-weight":"normal"});
                 $(this).css({"font-weight":"bold"});
             });

@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Leçon 7 JQuery</title>
+    <meta name="description" content="The HTML5 and JQuery basic page">
+    <meta name="author" content="Arnaud Renard">
+    <style>
+		body{width: 500px; height:500px; margin: 20px auto;}
+        ul{display:none; list-style-type: none; width:120px; line-height: 140%; margin:20px 0px 0px 0px; padding: 0; background:linear-gradient(white, rgb(156, 156, 250));}
+        .menu{float:left; background:linear-gradient(white, rgb(156, 156, 250)); width: 98px; height: 40px; border-right: solid 2px white; padding:0; margin: 0; text-align: center;}
+        span{position:relative; top:10px;}
+	</style>
+</head>
+
+<body>
+    <div class="menu">
+        <span>Menu 1</span>
+        <ul>
+            <li>Sous menu 1</li>
+            <li>Sous menu 2</li>
+        </ul>
+    </div>
+    <div class="menu">
+    <span>Menu 2</span>
+        <ul>
+            <li>Sous menu 1</li>
+            <li>Sous menu 2</li>
+            <li>Sous menu 3</li>
+        </ul>
+    </div>
+    <div class="menu">
+        <span>Menu 3</span>
+        <ul>
+            <li>Sous menu 1</li>
+            <li>Sous menu 2</li>
+            <li>Sous menu 3</li>
+            <li>Sous menu 4</li>
+        </ul>
+    </div>
+    <div class="menu">
+        <span>Menu 4</span>
+        <ul>
+            <li>Sous menu 1</li>
+            <li>Sous menu 2</li>
+            <li>Sous menu 3</li>
+            <li>Sous menu 4</li>
+            <li>Sous menu 5</li>
+        </ul>
+    </div>
+    <div class="menu">
+        <span>Menu 5</span>
+        <ul>
+            <li>Sous menu 1</li>
+            <li>Sous menu 2</li>
+            <li>Sous menu 3</li>
+            <li>Sous menu 4</li>
+            <li>Sous menu 5</li>
+            <li>Sous menu 6</li>
+        </ul>
+    </div>
+
+    <div style="position:absolute; top:700px;">
+        <p>
+            <hr>
+            <a style="color: blue;" href="../lecon7.html">Retour</a>
+        </p>
+    </div>
+    
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".menu").hover(
+                function(){
+                    $(this).children("ul").css({"display":"inherit"});
+                }, 
+                function(){
+                    $(this).children("ul").css({"display":"none"});
+
+                },
+            );
+        });
+        
+	</script>
+
+</body>
+</html>
