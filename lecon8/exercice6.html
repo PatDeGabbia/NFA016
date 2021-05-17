@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Leçon 8 JQuery</title>
+    <meta name="description" content="The HTML5 and JQuery basic page">
+    <meta name="author" content="Arnaud Renard">
+    <style>
+        body{width: 800px; margin: 20px auto;}
+        input, select{margin-bottom: 15px;}
+        .enLigne{display: inline-block; width:49%; height:100px;}
+	</style>
+</head>
+
+<body>
+    <form>
+        <div class='enLigne'>
+            Nombre 1 :<br>
+            <input type="text" id="nbr1">
+        </div>
+        <div class='enLigne'>
+            Nombre 2: <br>
+            <input type="text" id="nbr2">
+        </div>
+        <input type="submit" value="nbr aléatoire" class="aleatoire">
+    </form>
+
+    <div class="monTexte"></div>
+
+    <div style="position:absolute; top:700px;">
+        <p>
+            <hr>
+            <a style="color: blue;" href="../lecon8.html">Retour</a>
+        </p>
+    </div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".aleatoire").click(
+                function(e){
+                    e.stopPropagation();
+                    let valeur1 = Number($('#nbr1').val());
+                    let valeur2 = Number($('#nbr2').val());
+                    let resultat = valeur1 + Math.floor(Math.random()*(valeur2-valeur1+1));
+                    $(".monTexte").html('<p>Le nombre aléatoire est: ' + resultat + '</p>');
+                    return e.preventDefault();
+                }
+            );
+        });
+        
+	</script>
+
+</body>
+</html>

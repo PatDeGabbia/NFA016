@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Leçon 8 JQuery</title>
+    <meta name="description" content="The HTML5 and JQuery basic page">
+    <meta name="author" content="Arnaud Renard">
+    <style>
+        body{width: 800px; margin: 20px auto;}
+        .machine, .poignee{width: 360px; margin: auto;}
+        .nbr1{position:relative; top:-310px; left:80px;}
+        .nbr2{position:relative; top:-310px; left:108px;}
+        .nbr3{position:relative; top:-310px; left:140px;}
+        .envoyer{position:relative; top:-417px; left:305px; cursor: pointer;}
+	</style>
+</head>
+
+<body>
+    <div class="machine">
+        <img src="./images/machine_a_sous.png">
+        <img src="./images/5.png" class="nbr1">
+        <img src="./images/1.png" class="nbr2">
+        <img src="./images/7.png" class="nbr3">
+    </div>
+    <div class="poignee">
+        <img src="./images/poignee.png" class="envoyer">
+    </div>
+
+    <div style="position:absolute; top:700px;">
+        <p>
+            <hr>
+            <a style="color: blue;" href="../lecon8.html">Retour</a>
+        </p>
+    </div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $(".envoyer").click(
+                function(e){
+                    e.stopPropagation();
+                    let resultat = Math.floor(Math.random()*(10));
+                    let nomImage = $(".nbr1").attr("src");
+                    let debutChaine = nomImage.substring(0,nomImage.lastIndexOf("/")) + "/";
+                    let finChaine = nomImage.substring(nomImage.lastIndexOf("."),50);
+                    $(".nbr1").attr('src',debutChaine + String(resultat) + finChaine);
+
+                    resultat = Math.floor(Math.random()*(10));
+                    nomImage = $(".nbr2").attr("src");
+                    debutChaine = nomImage.substring(0,nomImage.lastIndexOf("/")) + "/";
+                    finChaine = nomImage.substring(nomImage.lastIndexOf("."),50);
+                    $(".nbr2").attr('src',debutChaine + String(resultat) + finChaine);
+
+                    resultat = Math.floor(Math.random()*(10));
+                    nomImage = $(".nbr3").attr("src");
+                    debutChaine = nomImage.substring(0,nomImage.lastIndexOf("/")) + "/";
+                    finChaine = nomImage.substring(nomImage.lastIndexOf("."),50);
+                    $(".nbr3").attr('src',debutChaine + String(resultat) + finChaine);
+
+                    return e.preventDefault();
+                }
+            );
+        });
+        
+	</script>
+
+</body>
+</html>

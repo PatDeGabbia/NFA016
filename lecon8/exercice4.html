@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Leçon 8 JQuery</title>
+    <meta name="description" content="The HTML5 and JQuery basic page">
+    <meta name="author" content="Arnaud Renard">
+    <style>
+        body{width: 800px; margin: 20px auto;}
+        input, select{margin-bottom: 15px;}
+	</style>
+</head>
+
+<body>
+    <div class="formulaire">
+    <form>
+        Un texte :<br>
+        <input type="text" id="texte1"><br>
+        <input type="submit" value="Phrase type 1" class="envoyer1">
+        <input type="submit" value="Phrase type 2" class="envoyer2">
+        <input type="submit" value="recopie" class="envoyer3">
+    </form>
+
+    <div class="monTexte"></div>
+
+    <div style="position:absolute; top:700px;">
+        <p>
+            <hr>
+            <a style="color: blue;" href="../lecon8.html">Retour</a>
+        </p>
+    </div>
+    </div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var monTexte = ' ';
+            $(".envoyer1").click(
+                function(e){
+                    e.stopPropagation();
+                    monTexte = monTexte + " Voici ma phrase type 1";
+                    $(".monTexte").html('<p>'+monTexte+' '+'</p>');
+                    return e.preventDefault();
+                }
+            );
+            $(".envoyer2").click(
+                function(e){
+                    e.stopPropagation();
+                    monTexte = monTexte + " Voici ma seconde phrase type";
+                    $(".monTexte").html('<p>'+monTexte+'</p>');
+                    return e.preventDefault();
+                }
+            );
+            $(".envoyer3").click(
+                function(e){
+                    e.stopPropagation();
+                    monTexte = monTexte + ' '+ $("#texte1").val();
+                    $(".monTexte").html('<p>'+monTexte+' '+'</p>');
+                    return e.preventDefault();
+                }
+            );
+        });
+        
+	</script>
+
+</body>
+</html>

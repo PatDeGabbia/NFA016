@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Leçon 8 JQuery</title>
+    <meta name="description" content="The HTML5 and JQuery basic page">
+    <meta name="author" content="Arnaud Renard">
+    <style>
+        .album{width: 800px; margin: 20px auto;}
+        .album img{cursor: pointer;}
+        .afficheImage img{cursor: zoom-out; max-width: 800px; height: auto; margin: 20px auto;}
+	</style>
+</head>
+
+<body>
+    <div class="album">
+        <img src="./images/chaton1.jpg" alt="Photo d'un chaton">
+        <img src="./images/chaton2.jpg" alt="Photo d'un chaton">
+        <img src="./images/chaton3.jpg" alt="Photo d'un chaton">
+        <img src="./images/chaton4.jpg" alt="Photo d'un chaton">
+
+        <div class="afficheImage"></div>
+    </div>
+
+    <div style="position:absolute; top:700px;">
+        <p>
+            <hr>
+            <a style="color: blue;" href="../lecon8.html">Retour</a>
+        </p>
+    </div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".album img").click(
+                function(e){
+                    e.stopPropagation();
+                    let nomImage = $(this).attr("src");
+                    let debutChaine = nomImage.substring(0,nomImage.lastIndexOf("/")) + "/";
+                    let finChaine = nomImage.substring(nomImage.lastIndexOf("/"),50);
+                    finChaine = finChaine.substring(1,50);
+                    nomImage = debutChaine + "big_" + finChaine;
+                    $(".afficheImage").html('<img src="'+nomImage+'" alt="Photo d\'un chaton">');
+                }
+            );
+            $(".afficheImage").click(
+                function(e){
+                    e.stopPropagation();
+                    $(".afficheImage").html('');
+                }
+            );
+        });
+        
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Leçon 8 JQuery</title>
+    <meta name="description" content="The HTML5 and JQuery basic page">
+    <meta name="author" content="Arnaud Renard">
+    <style>
+        body{width: 800px; margin: 20px auto;}
+	</style>
+</head>
+
+<body>
+    <input type="submit" value="image aléatoire" class="aleatoire">
+    <div class="image"></div>
+
+    <div style="position:absolute; top:700px;">
+        <p>
+            <hr>
+            <a style="color: blue;" href="../lecon8.html">Retour</a>
+        </p>
+    </div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".aleatoire").click(
+                function(e){
+                    e.stopPropagation();
+                    let resultat = Math.floor(Math.random()*(10));
+                    $(".image").html('<img src="./images/'+resultat+'.png">');
+                    return e.preventDefault();
+                }
+            );
+        });
+        
+	</script>
+
+</body>
+</html>

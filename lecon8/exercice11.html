@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Leçon 8 JQuery</title>
+    <meta name="description" content="The HTML5 and JQuery basic page">
+    <meta name="author" content="Arnaud Renard">
+    <style>
+        body{width: 800px; margin: 20px auto;}
+        .machine, .poignee{width: 360px; margin: auto;}
+        .nbr1{position:relative; top:-310px; left:80px;}
+        .nbr2{position:relative; top:-310px; left:108px;}
+        .nbr3{position:relative; top:-310px; left:140px;}
+        .envoyer{position:relative; top:-417px; left:305px; cursor: pointer;}
+        .red{color: red;}
+        p{font-size: 20px;}
+        .cagnotte{position:relative; top:-150; text-align: center;}
+        .messageGagnant{position:relative; top:-130; text-align: center;}
+	</style>
+</head>
+
+<body>
+    <div class="machine">
+        <img src="./images/machine_a_sous.png">
+        <img src="./images/5.png" class="nbr1">
+        <img src="./images/1.png" class="nbr2">
+        <img src="./images/7.png" class="nbr3">
+    </div>
+    <div class="poignee">
+        <img src="./images/poignee.png" class="envoyer">
+    </div>
+
+    <div class="cagnotte">Votre cagnotte est de <b>10</b> point(s)</div>
+    <div class="messageGagnant"></div>
+
+    <div style="position:absolute; top:700px;">
+        <p>
+            <hr>
+            <a style="color: blue;" href="../lecon8.html">Retour</a>
+        </p>
+    </div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            if(cagnotte == undefined){var cagnotte = 10;}
+            $(".envoyer").click(
+                function(e){
+                    e.stopPropagation();
+                    
+                    if(cagnotte > 0){
+
+                        let resultat1 = Math.floor(Math.random()*(10));
+                        let nomImage = $(".nbr1").attr("src");
+                        let debutChaine = nomImage.substring(0,nomImage.lastIndexOf("/")) + "/";
+                        let finChaine = nomImage.substring(nomImage.lastIndexOf("."),50);
+                        $(".nbr1").attr('src',debutChaine + String(resultat1) + finChaine);
+
+                        let resultat2 = Math.floor(Math.random()*(10));
+                        nomImage = $(".nbr2").attr("src");
+                        debutChaine = nomImage.substring(0,nomImage.lastIndexOf("/")) + "/";
+                        finChaine = nomImage.substring(nomImage.lastIndexOf("."),50);
+                        $(".nbr2").attr('src',debutChaine + String(resultat2) + finChaine);
+
+                        let resultat3 = Math.floor(Math.random()*(10));
+                        nomImage = $(".nbr3").attr("src");
+                        debutChaine = nomImage.substring(0,nomImage.lastIndexOf("/")) + "/";
+                        finChaine = nomImage.substring(nomImage.lastIndexOf("."),50);
+                        $(".nbr3").attr('src',debutChaine + String(resultat3) + finChaine);
+
+                        if((resultat1 == resultat2) && (resultat1 == resultat3)){
+                            $(".messageGagnant").html('<p class="red">Félicitation, vous avez 3 nombres identiques! (très rare)<br> Vous gagnez 50 points</p>');
+                            cagnotte += 50;
+                        }
+                        else if((resultat1 == resultat2) || (resultat1 == resultat3) || (resultat2 == resultat3)){
+                            $(".messageGagnant").html('<p class="red">Félicitation, vous avez 2 nombres identiques!<br> Vous gagnez 3 points</p>');
+                            cagnotte += 3;
+                        }
+                        else{
+                            $(".messageGagnant").html('<p>Aie, pas de chance... Mais retentez là :)<br> Vous perdez 1 point</p>');
+                        }
+
+                        cagnotte -= 1;
+                    }
+                    else{$(".messageGagnant").html('<p>Sérieusement, vous ne croyez pas que vous avez assez joué comme ça.<br> Remettez des sous si vous voulez continuer</p>');}
+
+                    $(".cagnotte").html('Votre cagnotte est de <b>' + cagnotte + '</b> point(s)');
+                    return e.preventDefault();
+                }
+            );
+        });
+        
+	</script>
+
+</body>
+</html>

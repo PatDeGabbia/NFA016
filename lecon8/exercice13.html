@@ -1,0 +1,110 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Leçon 8 JQuery</title>
+    <meta name="description" content="The HTML5 and JQuery basic page">
+    <meta name="author" content="Arnaud Renard">
+    <style>
+        body{width: 800px; margin: 20px auto;}
+        input{margin-bottom: 15px;}
+        input{color: #003333; font-size: 90%; padding: 5px; border: #d3d3d3 1px solid; border-radius: 5px;}
+        .enLigne{display: inline-block; width:30%; height:100px;}
+        .red{color: red;}
+	</style>
+</head>
+
+<body>
+    <form>
+        <div class='enLigne'>
+            Nombre 1:<br>
+            <input type="text" id="nbr1" size="10">
+        </div>
+        <div class='enLigne'>
+            Nombre 2: <br>
+            <input type="text" id="nbr2" size="10">
+        </div>
+        <div class='enLigne'>
+            Nombre 3: <br>
+            <input type="text" id="nbr3" size="10">
+        </div>
+        <input type="submit" value="comparer" class="comparer">
+    </form>
+
+    <div class="monTexte"></div>
+
+    <div style="position:absolute; top:700px;">
+        <p>
+            <hr>
+            <a style="color: blue;" href="../lecon8.html">Retour</a>
+        </p>
+    </div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".comparer").click(
+                function(e){
+                    e.stopPropagation();
+                    let valeur1 = Number($('#nbr1').val());
+                    let valeur2 = Number($('#nbr2').val());
+                    let valeur3 = Number($('#nbr3').val());
+                    let resultat1 = false;
+                    let resultat2 = false;
+                    let resultat3 = false;
+                    let texte1 ='';
+                    let texte2 ='';
+                    let texte3 ='';
+
+                    if($('#nbr1').val()==''){
+                        texte1 = '<p class="red">Le nombre 1 n\'a pas été saisie<br></p>';
+                        $("#nbr1").css({'background-color':'red'});
+                    }
+                    else {
+                        texte1='';
+                        $("#nbr1").css({'background-color':'white'});
+                    }
+                    if($('#nbr2').val()==''){
+                        texte2 = '<p class="red">Le nombre 2 n\'a pas été saisie<br></p>';
+                        $("#nbr2").css({'background-color':'red'});
+                    }
+                    else {
+                        texte2='';
+                        $("#nbr2").css({'background-color':'white'});
+                    }
+                    if($('#nbr3').val()==''){
+                        texte3 = '<p class="red">Le nombre 3 n\'a pas été saisie<br></p>';
+                        $("#nbr3").css({'background-color':'red'});
+                    }
+                    else {
+                        texte3='';
+                        $("#nbr3").css({'background-color':'white'});
+                    }
+                    $(".monTexte").html(texte1 + texte2 + texte3);
+
+                    if(texte1=='' && texte2=='' && texte3==''){
+                        if((valeur1 >= valeur2) && (valeur1 >= valeur3)){
+                            resultat1 = true;
+                        }
+                        if((valeur2 >= valeur1) && (valeur2 >= valeur3)){
+                            resultat2 = true;
+                        }
+                        if((valeur3 >= valeur1) && (valeur3 >= valeur2)){
+                            resultat3 = true;
+                        }
+                        if(resultat1 == true){$("#nbr1").css({'background-color':'#a9f9a9'});}
+                        else{$("#nbr1").css({'background-color':'white'});}
+                        if(resultat2 == true){$("#nbr2").css({'background-color':'#a9f9a9'});}
+                        else{$("#nbr2").css({'background-color':'white'});}
+                        if(resultat3 == true){$("#nbr3").css({'background-color':'#a9f9a9'});}
+                        else{$("#nbr3").css({'background-color':'white'});}
+                    }
+
+                    return e.preventDefault();
+                }
+            );
+        });
+        
+	</script>
+
+</body>
+</html>

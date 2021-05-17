@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Leçon 8 JQuery</title>
+    <meta name="description" content="The HTML5 and JQuery basic page">
+    <meta name="author" content="Arnaud Renard">
+    <style>
+        body{width: 800px; margin: 20px auto;}
+        input, select{margin-bottom: 15px;}
+	</style>
+</head>
+
+<body>
+    <div class="formulaire">
+    <form>
+        Un texte :<br>
+        <input type="text" id="texte1"><br>
+        un autre texte:<br>
+        <input type="text" id="texte2"><br>
+        <select id="selection">
+            <option value="chien">Chien</option>
+            <option value="chat">Chat</option>
+            <option value="lapin">Lapin</option>
+        </select><br>
+        <select id="choix">
+            <option value="majuscule">MAJUSCULE</option>
+            <option value="miniscule">minuscule</option>
+        </select><br>
+        <input type="submit" class="envoyer">
+    </form>
+
+    <div class="monTexte"></div>
+
+    <div style="position:absolute; top:700px;">
+        <p>
+            <hr>
+            <a style="color: blue;" href="../lecon8.html">Retour</a>
+        </p>
+    </div>
+    </div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".envoyer").click(
+                function(e){
+                    e.stopPropagation();
+                    let monTexte = $("#texte1").val() + " " + $("#texte2").val() + " " + $("#selection").children("option:selected").val();
+                    if($("#choix").children("option:selected").val() == 'majuscule'){monTexte = monTexte.toUpperCase();}
+                    else {monTexte = monTexte.toLowerCase();}
+                    $(".monTexte").html('<p>'+monTexte+'</p>');
+                    return e.preventDefault();
+                }
+            );
+        });
+        
+	</script>
+
+</body>
+</html>
