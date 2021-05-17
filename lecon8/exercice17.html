@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Leçon 8 JQuery</title>
+    <meta name="description" content="The HTML5 and JQuery basic page">
+    <meta name="author" content="Arnaud Renard">
+    <style>
+        body{width: 800px; margin: 20px auto;}
+        input{margin-bottom: 15px; width:200px;}
+        label{display:inline-block; width:300px; margin-left: 20px;}
+        input[type="submit"]{margin-left: 150px;}
+	</style>
+</head>
+
+<body>
+    <p>Vous devez deviner un nombre compris entre 0 et 1000. Vous avez 10 coups devant vous. Bon jeu.</p>
+    <form>
+        <label>Veuillez saisir un nombre:</label>
+        <input type="text" id="nbr" size="10"><br>
+        <input type="submit" value="envoyer" class="envoyer">
+        <input type="submit" value="recommencer" class="recommencer">
+    </form>
+
+    <p class="texteResultat"></p>
+
+    <div style="position:absolute; top:700px;">
+        <p>
+            <hr>
+            <a style="color: blue;" href="../lecon8.html">Retour</a>
+        </p>
+    </div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(".recommencer").hide();
+        if(nbrADecouvrir == undefined){var nbrADecouvrir = Math.floor(Math.random()*(1000));}
+        if(nbrCoup == undefined){var nbrCoup=0;}
+        $(document).ready(function(){
+            $(".envoyer").click(
+                function(e){
+                    e.stopPropagation();
+                    nbrCoup += 1;
+                    let nbrPropose = Number($('#nbr').val());
+                    if(nbrPropose < nbrADecouvrir){$('p[class="texteResultat"]').append("Vous avez proposé le " + nbrPropose + ", le nombre à deviner est plus grand.<br>");}
+                    if(nbrPropose > nbrADecouvrir){$('p[class="texteResultat"]').append("Vous avez proposé le " + nbrPropose + ", le nombre à deviner est plus petit.<br>");}
+                    if(nbrPropose == nbrADecouvrir){
+                        $('p[class="texteResultat"]').append("Vous avez proposé le " + nbrPropose + ", BRAVO vous avez gagné!<br>");
+                        $('p[class="texteResultat"]').append("Vous avez réussi en " + nbrCoup + " coup(s)<br>");
+                        $(".envoyer").hide();
+                        $(".recommencer").show();
+                    }
+                    if(nbrCoup >= 10){
+                        $('p[class="texteResultat"]').append("Vous avez perdu !<br>");
+                        $(".envoyer").hide();
+                        $(".recommencer").show();
+                    }
+                    return e.preventDefault();
+                }
+            );
+            $(".recommencer").click(
+                function(e){
+                    e.stopPropagation();
+                    $('p[class="texteResultat"]').html("");
+                    nbrADecouvrir = Math.floor(Math.random()*(1000));
+                    nbrCoup=0;
+                    $(".envoyer").show();
+                    $(".recommencer").hide();
+                    return e.preventDefault();
+                }
+            );
+        });
+        
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Leçon 8 JQuery</title>
+    <meta name="description" content="The HTML5 and JQuery basic page">
+    <meta name="author" content="Arnaud Renard">
+    <style>
+        body{width: 800px; margin: 20px auto;}
+        input, select{margin-bottom: 15px; width:200px;}
+        label{display:inline-block; width:300px; margin-left: 20px;}
+        .comparer{margin-left: 150px;}
+	</style>
+</head>
+
+<body>
+    <form>
+        <label>Saisissez le poids (kg):</label>
+        <input type="text" id="poids" size="10"><br>
+        <label>Saisissez le volume (m3):</label>
+        <input type="text" id="volume" size="10"><br>
+        <label>Choisissez votre mode de transport:</label>
+        <select id="transport">
+            <option value="1">Avion</option>
+            <option value="2">Bateau</option>
+            <option value="3">Train</option>
+            <option value="4">Avion ou bateau</option>
+            <option value="5">Avion ou train</option>
+            <option value="6">Avion, bateau ou train</option>
+        </select><br>
+        <input type="submit" value="comparer" class="comparer">
+    </form>
+
+    <div class="texteResultat"></div>
+
+    <div style="position:absolute; top:700px;">
+        <p>
+            <hr>
+            <a style="color: blue;" href="../lecon8.html">Retour</a>
+        </p>
+    </div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".comparer").click(
+                function(e){
+                    e.stopPropagation();
+                    let poids = Number($('#poids').val());
+                    let volume = Number($('#volume').val());
+                    let transport = Number($("#transport").val());
+                    let calcul = 0;
+                    let monTexte ='';
+                    if(transport == 1){calcul = poids*10;}
+                    if(transport == 2){calcul = volume*6;}
+                    if(transport == 3){calcul = (poids*3)+(volume*2);}
+                    if(transport == 4){
+                        let calcul1 = poids*10;
+                        let calcul2 = volume*6;
+                        if(calcul1 > calcul2){calcul = calcul2; monTexte = 'par bateau';}
+                        else{calcul = calcul1; monTexte = 'par avion';}
+                    }
+                    if(transport == 5){
+                        let calcul1 = poids*10;
+                        let calcul2 = (poids*3)+(volume*2);
+                        if(calcul1 > calcul2){calcul = calcul2; monTexte = 'par train';}
+                        else{calcul = calcul1; monTexte = 'par avion';}
+                    }
+                    if(transport == 6){
+                        let calcul1 = poids*10;
+                        let calcul2 = volume*6;
+                        let calcul3 = (poids*3)+(volume*2);
+                        if((calcul1 < calcul2) && (calcul1 < calcul3)){calcul = calcul1; monTexte = 'par avion';}
+                        if((calcul2 < calcul1) && (calcul2 < calcul3)){calcul = calcul2; monTexte = 'par bateau';}
+                        if((calcul3 < calcul1) && (calcul3 < calcul2)){calcul = calcul3; monTexte = 'par train';}
+                    }
+                    calcul = calcul.toFixed(2);
+                    $(".texteResultat").html('<p>'+ calcul +' euros '+ monTexte+'</p>');
+
+                    return e.preventDefault();
+                }
+            );
+        });
+        
+	</script>
+
+</body>
+</html>
