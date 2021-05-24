@@ -1,0 +1,145 @@
+body{
+    width:960px; margin:auto; font-size:16px;
+}
+
+/* GRID Mise en page générale */
+.page-wrapper{display:grid;
+    grid-template-columns: [scale-left] 510px [scale-right] 450px [end];
+    grid-template-rows: [row-1] 258px [row-2] 670px [row-3] 900px [row-4] 30px [end];}
+
+.intro{grid-area: row-1 / scale-left / row-2 / end;}
+.main{
+    grid-area: row-2 / scale-left / row-4 / scale-right; 
+    background: url(../images/balance_right.png) no-repeat left bottom,
+    url(../images/glaive.png) no-repeat 413px 30px;
+    padding-right: 60px;
+}
+.sidebar{
+    grid-area: row-3 / scale-right / row-4 / end;
+    background: url(../images/balance_left.png) 100% no-repeat;
+    background-position: bottom right;
+}
+
+/* GRID Mise en page du titre */
+.intro{display:grid;
+    grid-template-columns: [scale-left] 510px [scale-right] 450px [end];
+    grid-template-rows: [row-1] 258px [row-2] 335px [row-3] 335px [end];
+}
+
+header[role=banner]{grid-area: row-1 / scale-left / row-2 / end;}
+.summary{grid-area: row-2 / scale-right / row-3 / end;}
+.preamble{grid-area: row-3 / scale-right / end / end;}
+
+/*Image de fond du bandeau */
+header{
+    background: url(../images/Fronton_vierge.png) 100% no-repeat;
+    height:256px;
+}
+
+/* Taille des articles */
+.explanation, .participation, .benefits, .requirements, .summary, .preamble, .design-selection{
+    height: 300px;
+    margin: 15px 0;
+    overflow-y:scroll;
+    background: url(../images/pierre.png) 100% no-repeat;
+    border: ridge 10px #e9c082;
+    cursor:ns-resize;
+}
+
+footer{
+    height: 100px;
+    margin: 15px 0;
+    overflow-y:scroll;
+    background: url(../images/pierre.png) 100% no-repeat;
+    border: ridge 10px #e9c082;
+    cursor:ns-resize;
+}
+
+.design-archives, .zen-resources{
+    height: 200px;
+    margin: 15px 0;
+    overflow-y:scroll;
+    background: url(../images/pierre.png) 100% no-repeat;
+    border: ridge 10px #e9c082;
+    cursor:ns-resize;
+}
+
+/*Police de caractères */
+@font-face{
+    font-family: "titre";
+    src: url('../font/IMFellEnglishSC-Regular.ttf');
+}
+
+@font-face{
+    font-family: "texte";
+    src: url('../font/Ubuntu-Regular.ttf');
+}
+
+/*Paramétrage des titres */
+h1{
+    position: relative;
+    color:#7f6b49;
+    font-family:"titre";
+    font-size:1.6em;
+    top: 177px;
+    left: 390px;
+    width:400px;
+}
+
+h2{
+    position: relative;
+    color:#7f6b49;
+    font-family:"titre";
+    font-size:1.2em;
+    top: 155px;
+    left: 370px;
+    width:400px;  
+}
+
+h3{
+    font-family:"titre";
+    font-size:1.4em;
+    padding-left:10px;
+}
+
+/*Paramétrage du texte*/
+p{
+    font-family:"texte";
+    font-size:1em;
+    line-height: 1.4em;
+    padding-left:10px;
+}
+
+a{
+    font-family:"titre";
+    line-height: 1.2em;
+    font-size:1.4em;
+    color:#554123;
+}
+
+/*Alignement des liens du footer*/
+footer{
+    width: 450px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+footer a{
+    padding: 0em 0.2em;
+    border: ridge 10px #e9c082;
+}
+
+/*Modification des barres de défilement (uniquement pour Chrome)*/
+.explanation::-webkit-scrollbar,
+.participation::-webkit-scrollbar, 
+.benefits::-webkit-scrollbar,
+.requirements::-webkit-scrollbar,
+.summary::-webkit-scrollbar,
+.preamble::-webkit-scrollbar,
+.design-selection::-webkit-scrollbar,
+footer::-webkit-scrollbar,
+.design-archives::-webkit-scrollbar,
+.zen-resources::-webkit-scrollbar {
+    display: none;
+}
