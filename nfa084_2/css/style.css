@@ -1,0 +1,310 @@
+/********************************************************************/
+/* *********************** Importations *************************** */
+/********************************************************************/
+@import url("../css/normalize.css");
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+@font-face{
+  font-family: "roboto";
+  src: url('../font/Roboto-Regular.ttf');
+}
+
+/********************************************************************/
+/* ***************************** Variables ************************ */
+/********************************************************************/
+:root{
+  --gris-clair:#999999;
+  --gris-fonce:#666666;
+  --gris-tres-fonce:#333333;
+  --taille-ecran:480px;
+  --taille-colonne:480px;
+}
+
+/********************************************************************/
+/* ****************************** général ************************* */
+/********************************************************************/
+html{
+  font-family:"roboto";
+  font-size:14px;
+}
+
+
+body{
+  width: var(--taille-ecran);
+  margin: auto;
+  position:relative;
+  /*border:solid 1px;*/
+  }
+
+  h3{
+    font-size:2em;
+    color:#619cd6;
+    text-align: center;
+  }
+  
+  h3::before {
+    content: url(../images/LogoGabion2.jpg);
+    display: inline-block;
+    width: 80px;
+    margin-right: 6px;
+  }
+
+  a{
+    font-weight: bold;
+    color: var(--gris-fonce);
+  }
+
+  p{
+    color: var(--gris-fonce);
+  }
+
+  abbr{
+    font-weight: bold;
+    color: var(--gris-tres-fonce);
+  }
+
+  .preamble,
+  .main,
+  .sidebar{
+    width: var(--taille-colonne);
+  }
+
+/********************************************************************/
+/* ******************************* intro ************************** */
+/********************************************************************/
+header{
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  background: #fff url(../images/projet_titre.png) top left no-repeat;
+  height: 240px; 
+  width: 100%;
+  margin-top: 24px;
+  align-items: flex-end;
+}
+
+header h1{
+  background-color: #fff;
+  width: 320px;
+  height: 45px;
+  margin: 0;
+  font-size:3em;
+  line-height: 1;
+  color: var(--gris-clair);
+  text-align: right;
+}
+
+header h2{
+  background-color: #fff;
+  width: 230px;
+  height: 60px;
+  margin: 0;
+  font-size:1.2em;
+  line-height: 0;
+  color: var(--gris-fonce);
+  text-align: right;
+}
+
+.summary p:first-child{
+  background-color: #fff;
+  position: absolute;
+  top:132px;
+  right: 0px;
+  color: var(--gris-fonce);
+  text-align: justify;
+  width:158px;
+}
+
+.summary p:last-child{
+  position: absolute;
+  top:230px;
+  color: var(--gris-fonce);
+}
+
+.preamble{
+  margin-top: 48px;
+  line-height: 1.5em;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+/********************************************************************/
+/* ***********************main supporting ************************* */
+/********************************************************************/
+
+.main{
+  line-height: 1.5em;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.preamble::after,
+.explanation::after, 
+.participation::after, 
+.benefits::after{
+  content: url(../images/Outil.png);
+  display: block;
+  margin-left: 120px;
+}
+
+
+/* ************************** footer ****************************** */
+footer{
+  background: #fff url(../images/enduit_lisse.png) top left no-repeat;
+  background-size: var(--taille-colonne);
+  height: 120px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+footer a{
+  color: #FFFFFF;
+  margin: 12px;
+  font-size: 2em;
+}
+
+
+/********************************************************************/
+/* ****************************** sidebar ************************* */
+/********************************************************************/
+
+aside{
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+
+/* ********************* design-selection ************************* */
+.design-selection{
+  background: #fff url(../images/arche.png) top left no-repeat;
+  background-size: var(--taille-colonne);
+  height: 240px;
+  margin-top: 96px;
+}
+
+.design-selection h3{
+  position:relative;
+  top: -40px;
+}
+
+.design-selection li{
+  color: var(--gris-clair);
+}
+
+.design-selection nav ul li:nth-child(2){
+  position:relative;
+  top: 15px;
+  left: 110px;
+}
+
+.design-selection nav ul li:nth-child(3){
+  position:relative;
+  top: 17px;
+  left: 90px;
+}
+
+.design-selection nav ul li:nth-child(4){
+  position:relative;
+  top: 19px;
+  left: 75px;
+}
+
+.design-selection nav ul li:nth-child(8){
+  position:relative;
+  top: -27px;
+  left : 65px;
+}
+
+.design-selection nav ul li:nth-child(5){
+  position:relative;
+  top: 39px;
+  left: 62px;
+}
+
+.design-selection nav ul li:nth-child(6){
+  position:relative;
+  top: 42px;
+  left: 60px;
+}
+
+.design-selection nav ul li:nth-child(7){
+  position:relative;
+  top: 44px;
+  left: 63px;
+}
+
+.design-selection nav ul li:nth-child(1){
+  position:relative;
+  top: 160px;
+  left: 60px
+}
+
+/* ********************* design-archives *********************** */
+.design-archives{
+  background: #fff url(../images/Mesure.png) bottom right no-repeat;
+  height: 200px;
+  margin-top: 96px;
+}
+
+.design-archives h3{
+  position: relative;
+  top: -24px;
+}
+
+.design-archives ul{
+  line-height: 2em;
+  margin-left: 50px;
+}
+
+
+
+
+
+/* ********************* zen-resources ************************* */
+.zen-resources{
+  background: #fff url(../images/TaillePierre.png) bottom right no-repeat;
+  height: 260px;
+  margin-top: 96px;
+}
+
+.zen-resources h3{
+  position: relative;
+  top: -24px;
+}
+
+.zen-resources ul{
+  line-height: 2em;
+}
+
+/********************************************************************/
+/* *********************** Logo pied de page ********************** */
+/********************************************************************/
+.extra1{
+  background: #fff url(../images/LogosPartenaires.png) no-repeat;
+  height: 50px;
+  width: var(--taille-ecran);
+  background-size: var(--taille-ecran);
+  margin-top: 48px;
+}
+
+@media (min-width: 960px){
+  :root{
+    --taille-ecran:960px;
+  }
+  .extra1{
+    height:100px;
+  }
+  aside{
+    position: absolute;
+    top: 480px;
+    right:0px;
+    /*border: var(--gris-clair) solid 1px;*/
+  }
+}
